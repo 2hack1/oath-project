@@ -5,85 +5,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Google</title>
+    <title>Welcome Page</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Product+Sans:ital,wght@0,400;1,400&display=swap');
-
         body {
-            font-family: 'Product Sans', Arial, sans-serif;
+            font-family: Arial, sans-serif;
             text-align: center;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
             height: 100vh;
-            background: url('https://images.unsplash.com/photo-1534081333815-ae5019106622?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDd8fG5pZ2h0fGVufDB8fHx8MTY4MDA3Nzg4Nw&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center fixed;
-            background-size: cover;
-            color: white;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
         }
-        .logo {
+        .container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .container h1 {
+            font-size: 2.5em;
             margin-bottom: 20px;
-            font-size: 100px;
-            font-weight: bold;
+            color: #333;
         }
-        .logo .my {
-            color: #EA4335;
-        }
-        .logo .google {
-            color: #4285F4;
-        }
-        .logo .o {
-            color: #FBBC05;
-        }
-        .logo .g {
-            color: #34A853;
-        }
-        .search-box {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .search-box input {
-            width: 600px;
-            height: 44px;
-            padding: 0 15px;
+        .button {
+            display: block;
+            width: calc(50% - 20px);
+            margin: 10px;
+            padding: 15px;
             font-size: 18px;
-            border: 1px solid #dfe1e5;
-            border-radius: 24px 0 0 24px;
-            outline: none;
-            box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
-            border-right: none;
-            background-color: rgba(255, 255, 255, 0.9);
-        }
-        .search-box button {
-            height: 44px;
-            width: 50px;
-            background-color: rgba(255, 255, 255, 0.9);
-            border: 1px solid #dfe1e5;
-            border-left: none;
-            border-radius: 0 24px 24px 0;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 8px;
             cursor: pointer;
-            outline: none;
-            box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            text-decoration: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, box-shadow 0.3s;
         }
-        .search-box button img {
-            width: 20px;
-            height: 20px;
+        .button:hover {
+            background-color: #0056b3;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .button.register {
+            background-color: #28a745;
+        }
+        .button.register:hover {
+            background-color: #218838;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+        .footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <div class="logo">
-        <span class="my">My</span>
-        <span class="google">G</span><span class="o">o</span><span class="google">o</span><span class="g">g</span><span class="google">l</span><span class="google">e</span>
-    </div>
-    <div class="search-box">
-        <input type="text" placeholder="Search...">
-        <button><img src="https://www.google.com/images/icons/material/system/1x/search_black_24dp.png" alt="Search"></button>
+    <div class="container">
+        <h1>Welcome to Our Service</h1>
+        <a href="/ModelViewControl/form" class="button">Sign In</a>
+        <a href="/ModelViewControl/form" class="button register">Register</a>
+        <div class="footer">
+            <p>Already have an account? <a href="/ModelViewControl/form">Sign In</a></p>
+            <p>Need help? <a href="/contact">Contact Us</a></p>
+        </div>
     </div>
 </body>
 </html>

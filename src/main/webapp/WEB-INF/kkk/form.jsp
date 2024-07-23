@@ -1,9 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome Page</title>
+    <title>Registration Form</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -27,18 +29,34 @@
             text-align: center;
         }
         .container h1 {
-            font-size: 2.5em;
+            font-size: 2em;
             margin-bottom: 20px;
             color: #333;
         }
-        .button {
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .form-group label {
             display: block;
-            width: calc(50% - 20px);
-            margin: 10px;
-            padding: 15px;
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        .form-group input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
             font-size: 18px;
             color: #fff;
-            background-color: #007bff;
+            background-color: #28a745;
             border: none;
             border-radius: 8px;
             cursor: pointer;
@@ -47,38 +65,25 @@
             transition: background-color 0.3s, box-shadow 0.3s;
         }
         .button:hover {
-            background-color: #0056b3;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-        .button.register {
-            background-color: #28a745;
-        }
-        .button.register:hover {
             background-color: #218838;
-        }
-        .footer {
-            margin-top: 20px;
-            font-size: 14px;
-            color: #777;
-        }
-        .footer a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        .footer a:hover {
-            text-decoration: underline;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to Our Service</h1>
-        <a href="/sign-in" class="button">Sign In</a>
-        <a href="/register" class="button register">Register</a>
-        <div class="footer">
-            <p>Already have an account? <a href="/sign-in">Sign In</a></p>
-            <p>Need help? <a href="/contact">Contact Us</a></p>
-        </div>
+        <h1>Register</h1>
+        <form action="aa" method="get">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <button type="submit" class="button">Submit</button>
+        </form>
     </div>
 </body>
 </html>
