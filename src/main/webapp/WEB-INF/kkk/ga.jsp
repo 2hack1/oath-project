@@ -100,7 +100,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Registration Form</h1>
+        <h1>OATH // शपथ</h1>
         <p id="oath-text-en">
             India is my country; all Indians are my brothers and sisters.<br>
             I love my country, and I am proud of its rich and varied heritage. I shall always strive to be worthy of it.<br>

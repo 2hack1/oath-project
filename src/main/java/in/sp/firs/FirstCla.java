@@ -1,8 +1,6 @@
 package in.sp.firs;
 
 import java.util.Date;
-import java.util.concurrent.Callable;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -76,9 +74,26 @@ public class FirstCla {
 		System.out.println(getName());
 		return"certificate"; 
 	}
-		  
-	
+
 		
+	}
+	@RequestMapping("/LoginForm")
+	public  void Logi() {
+		System.out.println("Login form bhi chal gya");
+		return;
+	}
+	
+	@RequestMapping(path = "laa" , method = RequestMethod.POST)
+	public  String Login(@RequestParam("name")String ka, @RequestParam("email")String ea , Model model) {
+		System.out.println("google bhi chal raha hai");
+		
+	System.out.println(ka);
+	setName(ka);
+	setEmail(ea);
+	
+		model.addAttribute("name", ka);
+		model.addAttribute("email", ea);
+		return"certificate"; 
 	}
 	
 }
