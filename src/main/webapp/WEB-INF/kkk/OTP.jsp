@@ -1,12 +1,12 @@
-<%@page import="com.mysql.cj.protocol.Message"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Enter OTP</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -69,42 +69,20 @@
             background-color: #218838;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
-        .forgot-password {
-            margin-top: 20px;
-        }
-        .forgot-password a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        .forgot-password a:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
-<%String mess =(String)request.getAttribute("mess"); %>
+<%String otp=(String)request.getAttribute("otpMessage"); %>
     <div class="container">
-        <h1>Register</h1>
-        <h2><%= mess %></h2>
-        <form action="laa" method="post">
-           <!--  <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-            </div> -->
+        <h1>Enter OTP</h1>
+        <h3><%=otp%></h3>
+        <form action="verify_otp" method="post">
             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+                <label for="otp">Enter the OTP sent to your email</label>
+                <input type="text" id="otp" name="otp" required>
             </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="pass" required>
-            </div>
-            <button type="submit" class="button">Submit</button>
+            <button type="submit" class="button">Verify OTP</button>
         </form>
-        <div class="forgot-password">
-            <a href="/ModelViewControl/forget">Forgot Password?</a>
-        </div>
     </div>
 </body>
 </html>
-    

@@ -1,12 +1,12 @@
-<%@page import="com.mysql.cj.protocol.Message"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>OTP Verification</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -69,42 +69,50 @@
             background-color: #218838;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
-        .forgot-password {
-            margin-top: 20px;
+        .show-password {
+            margin-top: 10px;
+            text-align: left;
         }
-        .forgot-password a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        .forgot-password a:hover {
-            text-decoration: underline;
+        .show-password label {
+            font-size: 14px;
+            color: #555;
         }
     </style>
 </head>
 <body>
-<%String mess =(String)request.getAttribute("mess"); %>
+<%String userName = (String)request.getAttribute("userName"); 
+ String userEmail = (String)request.getAttribute("userEmail"); %>
     <div class="container">
-        <h1>Register</h1>
-        <h2><%= mess %></h2>
-        <form action="laa" method="post">
-           <!--  <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-            </div> -->
+        <h1>OTP Verification</h1>
+        <form action="xyz" method="post">
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" value="<%=userEmail %>>" disabled>
             </div>
             <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="pass" required>
+                <label for="otp">name</label>
+                <input type="text" id="otp" name="name" value="<%=userName %>" disabled>
+            </div>
+            <div class="form-group">
+                <label for="new-password">New Password</label>
+                <input type="password"  id="new-password" name="userPassword" required>
+            </div>
+            <div class="show-password">
+                <input type="checkbox" id="show-password">
+                <label for="show-password">Show Password</label>
             </div>
             <button type="submit" class="button">Submit</button>
         </form>
-        <div class="forgot-password">
-            <a href="/ModelViewControl/forget">Forgot Password?</a>
-        </div>
     </div>
+    <script>
+        document.getElementById('show-password').addEventListener('change', function() {
+            var passwordField = document.getElementById('new-password');
+            if (this.checked) {
+                passwordField.type = 'text';
+            } else {
+                passwordField.type = 'password';
+            }
+        });
+    </script>
 </body>
 </html>
-    

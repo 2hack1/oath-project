@@ -1,167 +1,139 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Stylish Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #e0f7fa;
+            font-family: Arial, sans-serif;
+            text-align: center;
             margin: 0;
             padding: 0;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
         }
-        .form-container {
-            background-color: #ffffff;
-            padding: 30px;
+        .container {
+            background: #fff;
+            padding: 40px;
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 100%;
             max-width: 400px;
-            box-sizing: border-box;
-        }
-        .form-container h2 {
-            margin-top: 0;
             text-align: center;
-            color: #00796b;
-            font-size: 28px;
-            font-weight: 600;
         }
-        .form-container label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: #00796b;
-        }
-        .form-container input[type="text"],
-        .form-container input[type="email"] {
-            width: 100%;
-            padding: 12px;
+        .container h1 {
+            font-size: 2em;
             margin-bottom: 20px;
-            border: 1px solid #b2dfdb;
-            border-radius: 6px;
-            box-sizing: border-box;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
             font-size: 16px;
-            color: #004d40;
-            background-color: #e0f2f1;
-            transition: border-color 0.3s, background-color 0.3s;
+            margin-bottom: 5px;
+            color: #555;
         }
-        .form-container input[type="text"]:hover,
-        .form-container input[type="email"]:hover {
-            background-color: #ffffff;
+        .form-group input,
+        .form-group select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
         }
-        .form-container input[type="text"]:focus,
-        .form-container input[type="email"]:focus {
-            border-color: #00796b;
-            background-color: #ffffff;
-        }
-        .gender-group {
-            margin-bottom: 20px;
-        }
-        .gender-group label {
-            font-weight: normal;
-            color: #004d40;
-        }
-        .gender-option {
+        .button {
             display: inline-block;
-            margin-right: 15px;
-        }
-        .gender-option input[type="radio"] {
-            display: none;
-        }
-        .gender-option label {
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            position: relative;
-            padding-left: 25px;
-        }
-        .gender-option label:before {
-            content: '';
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 2px solid #00796b;
-            border-radius: 50%;
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            transition: background-color 0.3s, border-color 0.3s;
-        }
-        .gender-option input[type="radio"]:checked + label:before {
-            background-color: #00796b;
-            border-color: #00796b;
-        }
-        .gender-option label:after {
-            content: '';
-            display: block;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #ffffff;
-            position: absolute;
-            left: 5px;
-            top: 50%;
-            transform: translateY(-50%);
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        .gender-option input[type="radio"]:checked + label:after {
-            opacity: 1;
-        }
-        .form-container input[type="submit"] {
-            background-color: #00796b;
-            color: #ffffff;
+            padding: 15px 30px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #28a745;
             border: none;
-            padding: 12px 20px;
-            text-align: center;
-            display: inline-block;
-            font-size: 16px;
-            border-radius: 6px;
+            border-radius: 8px;
             cursor: pointer;
-            width: 100%;
-            transition: background-color 0.3s;
+            text-decoration: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, box-shadow 0.3s;
         }
-        .form-container input[type="submit"]:hover {
-            background-color: #004d40;
+        .button:hover {
+            background-color: #218838;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .forgot-password {
+            margin-top: 20px;
+        }
+        .forgot-password a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+        .show-password {
+            margin-top: 10px;
+            text-align: left;
+        }
+        .show-password label {
+            font-size: 14px;
+            color: #555;
         }
     </style>
 </head>
 <body>
-    <div class="form-container">
-        <h2>Stylish Form</h2>
+    <div class="container">
+        <h1>Register</h1>
         <form action="aa" method="get">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="city">City:</label>
-            <input type="text" id="city" name="city" required>
-
-            <div class="gender-group">
-                <div class="gender-option">
-                    <input type="radio" id="male" name="gender" value="male">
-                    <label for="male">Male</label>
-                </div>
-                <div class="gender-option">
-                    <input type="radio" id="female" name="gender" value="female">
-                    <label for="female">Female</label>
-                </div>
-                <div class="gender-option">
-                    <input type="radio" id="other" name="gender" value="other">
-                    <label for="other">Other</label>
-                </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
             </div>
-
-            <input type="submit" value="Submit">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="pass" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="show-password">
+                <input type="checkbox" id="show-password">
+                <label for="show-password">Show Password</label>
+            </div>
+            <button type="submit" class="button">Submit</button>
         </form>
+        <div class="forgot-password">
+            <a href="forgot_password.html">Forgot Password?</a>
+        </div>
     </div>
+    <script>
+        document.getElementById('show-password').addEventListener('change', function() {
+            var passwordField = document.getElementById('password');
+            if (this.checked) {
+                passwordField.type = 'text';
+            } else {
+                passwordField.type = 'password';
+            }
+        });
+    </script>
 </body>
 </html>
+

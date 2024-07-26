@@ -1,4 +1,3 @@
-<%@page import="com.mysql.cj.protocol.Message"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -6,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Forgot Password</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -69,42 +68,18 @@
             background-color: #218838;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
-        .forgot-password {
-            margin-top: 20px;
-        }
-        .forgot-password a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        .forgot-password a:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
-<%String mess =(String)request.getAttribute("mess"); %>
     <div class="container">
-        <h1>Register</h1>
-        <h2><%= mess %></h2>
-        <form action="laa" method="post">
-           <!--  <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-            </div> -->
+        <h1>Forgot Password</h1>
+        <form action="forGet" method="get">
             <div class="form-group">
-                <label for="email">Email</label>
+                <label for="email">Enter your email</label>
                 <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="pass" required>
             </div>
             <button type="submit" class="button">Submit</button>
         </form>
-        <div class="forgot-password">
-            <a href="/ModelViewControl/forget">Forgot Password?</a>
-        </div>
     </div>
 </body>
 </html>
-    
