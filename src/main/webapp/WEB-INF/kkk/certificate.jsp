@@ -1,13 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ page contentType="text/html; charset=UTF-8" %>
-    <meta charset="UTF-8">
-    <%@page isELIgnored="false" %>
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +26,7 @@
             width: 100%;
             max-width: 800px;
             text-align: center;
-            position: relative;
+            position: relative; /* Add this line */
         }
         h1 {
             font-size: 2.5em;
@@ -77,6 +69,14 @@
         .certificate .date {
             position: absolute;
             top: 20px;
+            right: 20px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.2em;
+            color: #333;
+        }
+        .certificate .static-number {
+            position: absolute;
+            top: 20px;
             left: 20px;
             font-family: 'Open Sans', sans-serif;
             font-size: 1.2em;
@@ -89,6 +89,16 @@
             font-family: 'Great Vibes', cursive;
             font-size: 1.5em;
             color: #d4af37;
+        }
+        .certificate .seal {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 100px;
+            height: 100px;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/e/eb/Gold_Seal_Vector.svg') no-repeat center center;
+            background-size: contain;
+            opacity: 0.8;
         }
         .print-button {
             display: inline-block;
@@ -110,18 +120,16 @@
     </style>
 </head>
 <body>
- <% String name=(String)request.getAttribute("name");
-   String email=(String)request.getAttribute("email");
-    String date=(String)request.getAttribute("date");
- 
- %>
+
     <div class="container">
         <div class="certificate" id="certificate">
+            <div class="static-number">00<%= request.getAttribute("id") %></div>
+            <div class="date" id="currentDate"></div>
             <h2>Certificate of Oath</h2>
             <p>This is to certify that</p>
-            <p class="name"><%=name %></p>
+            <p class="name"><%= request.getAttribute("name") %></p>
             <p>with the email address</p>
-            <p class="email"><%=email %></p>
+            <p class="email"><%= request.getAttribute("email") %></p>
             <p>has taken the following oath:</p>
             <p>India is my country; all Indians are my brothers and sisters.<br>
             I love my country, and I am proud of its rich and varied heritage. I shall always strive to be worthy of it.<br>
@@ -133,8 +141,8 @@
             मैं अपने माता-पिता, शिक्षकों और सभी बुजुर्गों का सम्मान करूंगा और सभी के साथ शिष्टता से पेश आऊँगा।<br>
             अपने देश और अपनी जनता के प्रति, मैं अपनी भक्ति की प्रतिज्ञा करता हूँ।<br>
             उनकी भलाई और समृद्धि में ही मेरी खुशी है।</p>
-            <div class="date"><%=date%></div>
             <div class="signature">Kapil Agrawal</div>
+            <div class="seal"></div>
         </div>
         <button class="print-button" onclick="printCertificate()">Print Certificate</button>
     </div>
@@ -149,6 +157,19 @@
             document.body.innerHTML = originalContents;
             window.location.reload(); // Reload the page to restore original content
         }
+
+        function updateDate() {
+            const currentDate = new Date();
+            const formattedDate = currentDate.toLocaleDateString('en-GB', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+            });
+            document.getElementById('currentDate').innerText = `Date: ${formattedDate}`;
+        }
+
+        window.onload = updateDate;
     </script>
 </body>
 </html>
+

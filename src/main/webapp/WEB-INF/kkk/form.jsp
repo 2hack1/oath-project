@@ -90,7 +90,9 @@
     </style>
 </head>
 <body>
+<%String rmess=(String)request.getAttribute("rmess"); %>
     <div class="container">
+    <h2><%=rmess %></h2>
         <h1>Register</h1>
         <form action="aa" method="get">
             <div class="form-group">

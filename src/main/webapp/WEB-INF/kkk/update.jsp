@@ -87,7 +87,7 @@
         <form action="xyz" method="post">
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" value="<%=userEmail %>>" disabled>
+                <input type="email" id="email" name="email" value="<%=userEmail %>" disabled>
             </div>
             <div class="form-group">
                 <label for="otp">name</label>

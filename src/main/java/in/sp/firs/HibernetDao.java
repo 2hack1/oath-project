@@ -33,7 +33,7 @@ public class HibernetDao {
 		FirstCla a=this .hibernateTemplate.load(FirstCla.class,uid);
 	}
 	
-       //get the sigle sigle info of user
+      //get the sigle sigle info of user
 	@Transactional
 	public void update(Enty enty) {
 		
