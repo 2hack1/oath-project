@@ -122,9 +122,7 @@
             </div>
             <button type="submit" class="button">Submit</button>
         </form>
-        <div class="forgot-password">
-            <a href="forgot_password.html">Forgot Password?</a>
-        </div>
+        
     </div>
     <script>
         document.getElementById('show-password').addEventListener('change', function() {

@@ -178,11 +178,6 @@ public class FirstCla {
 			model.addAttribute("id", getId());
 			model.addAttribute("name", getName());
 			model.addAttribute("email", getEmail());
-			Date date = new Date();
-			int day = date.getDay();
-			int mon = date.getMonth();
-			int year = date.getYear();
-			model.addAttribute("date", "Date " + day + "-" + mon + "-" + (year + 1900));
 
 			return "certificate";
 		}
@@ -212,13 +207,7 @@ public class FirstCla {
 				  model.addAttribute("id",enty.getId());
 				  model.addAttribute("name", enty.getName()); 
 				  model.addAttribute("email",enty.getEmail());
-				   Date date = new Date();
-				   int day = date.getDay(); 
-				   int mon = date.getMonth(); 
-				   int year = date.getYear();
-				   model.addAttribute("date", "Date " + day + "-" + mon + "-" + (year + 1900)); 
 				  System.out.println(getEmail()); 
-				  // System.out.println(getName()); 
 				  return "certificate";				
 			}
 		}
@@ -299,15 +288,13 @@ public class FirstCla {
 		if (x) {
 			m.addAttribute("name", obj.getName());
 			m.addAttribute("email", obj.getEmail());
-			Date date = new Date();
-			int day = date.getDay();
-			int mon = date.getMonth();
-			int year = date.getYear();
-			m.addAttribute("date", "Date " + day + "-" + mon + "-" + (year + 1900));
+			m.addAttribute("id", obj.getId());
+		
 			return "certificate";
 			
 	
 		}else {
+			
 			return "redirect:/LoginForm";
 		}			
 	}	
