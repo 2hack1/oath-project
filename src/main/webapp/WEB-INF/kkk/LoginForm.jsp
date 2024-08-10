@@ -85,7 +85,7 @@
 <%String mess =(String)request.getAttribute("mess"); %>
     <div class="container">
         <h1>Register</h1>
-        <h2><%= mess %></h2>
+        <h2 style="color:red;"><%= mess %></h2>
         <form action="laa" method="post">
            <!--  <div class="form-group">
                 <label for="name">Name</label>
@@ -102,7 +102,7 @@
             <button type="submit" class="button">Submit</button>
         </form>
         <div class="forgot-password">
-            <a href="/ModelViewControl/forget">Forgot Password?</a>
+            <a href="/ModelViewControl-mvxc/forget">Forgot Password?</a>
         </div>
     </div>
 </body>

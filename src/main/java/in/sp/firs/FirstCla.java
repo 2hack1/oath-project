@@ -111,6 +111,7 @@ public class FirstCla {
  //Ragister page load********
 	@RequestMapping("/form")
 	public void form(Model m) {
+		
 		setOtpMatch("");
 		if (getRmess()==null) {
 			setRmess(" ");

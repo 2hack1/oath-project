@@ -75,10 +75,10 @@
 <body>
     <div class="container">
         <h1>Welcome to Our Service</h1>
-        <a href="/ModelViewControl/LoginForm" class="button">Login / Sign Up</a>
-        <a href="/ModelViewControl/form" class="button register">Register</a>
+        <a href="/ModelViewControl-mvxc/LoginForm" class="button">Login / Sign Up</a>
+        <a href="/ModelViewControl-mvxc/form" class="button register">Register</a>
         <div class="footer">
-            <p>Already have an account? <a href="/ModelViewControl/form">Sign In</a></p>
+            <p>Already have an account? <a href="/ModelViewControl-mvxc/form">Sign In</a></p>
             <p>Need help? <a href="/contact">Contact Us</a></p>
         </div>
     </div>
